@@ -1,0 +1,32 @@
+syntax = "proto2";
+ 
+package python.proto;
+ 
+message Snake {
+  optional float length_in_inches = 1;
+  optional float circumference_in_inches = 2;
+  optional Color color = 3;
+  optional bool has_rattle = 4;
+  optional int32 venom_index = 5;
+  optional string notes = 6;
+  optional int32 scales_per_inch = 7;
+  optional Species species = 8;
+  repeated Territory territories = 9;
+ 
+  enum Species {
+    PYTHON = 0;
+    GARDENER = 1;
+  }
+ 
+  enum Territory {
+    RAIN_FOREST = 0;
+    GRASSLAND = 1;
+    GARDEN = 2;
+  }
+ 
+  message Color {
+    required int32 red = 1;
+    required int32 green = 2;
+    required int32 blue = 3;
+  }
+}
